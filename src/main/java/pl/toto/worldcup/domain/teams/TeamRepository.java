@@ -1,18 +1,12 @@
 package pl.toto.worldcup.domain.teams;
 
-import com.google.common.collect.ImmutableList;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Component
-class TeamRepository {
+@Repository
+interface TeamRepository extends JpaRepository<TeamModel, Long> {
 
-    List<TeamModel> findAll() {
-        return ImmutableList.of(
-            TeamModel.builder()
-                    .name("Poland")
-                    .build()
-        );
-    }
+    List<TeamModel> findAll();
 }
