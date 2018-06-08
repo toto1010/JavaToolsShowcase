@@ -15,7 +15,7 @@ class TeamController {
     private final TeamService teamService;
 
     @GetMapping
-    List<TeamDto> teams() {
+    List<TeamModel> teams() {
         return teamService.getTeams();
     }
 }

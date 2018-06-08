@@ -6,37 +6,42 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="1" author="toto">
-        <createTable tableName="teams">
+    <changeSet id="3" author="toto">
+        <createTable tableName="coaches">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="coachName" type="varchar(50)"/>
-            <column name="name" type="varchar(50)">
+            <column name="first_name" type="varchar(50)"/>
+            <column name="last_name" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
+
+        <addColumn tableName="coaches">
+            <column name="coach_id" type="int" />
+        </addColumn>
     </changeSet>
 
-    <changeSet id="2" author="toto">
-        <insert tableName="teams">
+    <changeSet id="4" author="jako">
+        <insert tableName="coaches">
             <column name="id" value="1" />
-            <column name="name" value="Poland" />
-            <column name="coachName" value="Adam Nawalka" />
+            <column name="first_name" value="Adam" />
+            <column name="last_name" value="Nawalka" />
         </insert>
-
-        <insert tableName="teams">
+        <insert tableName="coaches">
             <column name="id" value="2" />
-            <column name="name" value="Belgium" />
-            <column name="coachName" value="Roberto Martinez" />
+            <column name="first_name" value="Adam" />
+            <column name="last_name" value="Nawalka" />
         </insert>
-
-        <insert tableName="teams">
+        <insert tableName="coaches">
             <column name="id" value="3" />
-            <column name="name" value="France" />
-            <column name="coachName" value="Adam Nawalka" />
+            <column name="first_name" value="Adam" />
+            <column name="last_name" value="Nawalka" />
         </insert>
 
+        <sql>
+            update teams set coach_id = team_id;
+        </sql>
     </changeSet>
 
 </databaseChangeLog>

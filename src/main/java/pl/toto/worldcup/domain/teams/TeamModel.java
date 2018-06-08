@@ -20,4 +20,8 @@ public class TeamModel {
     private Long id;
     private String name;
     private String coachName;
+/*
+    @ManyToOne
+    @JoinColumn(name = "coach_id")
+    private CoachModel coach;*/
 }
