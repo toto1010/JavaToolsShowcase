@@ -1,5 +1,8 @@
 package pl.toto.worldcup.lombok.adderess;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class AddressRunner {
 
     public static void main(String[] args) {
@@ -8,7 +11,7 @@ public class AddressRunner {
         firstAddress.setStreet("Random street");
         Address otherAddress = AddressBuilder.anAddress().build();
 
-        System.out.println(firstAddress.toString());
+        log.info(firstAddress.toString());
 
     }
 }

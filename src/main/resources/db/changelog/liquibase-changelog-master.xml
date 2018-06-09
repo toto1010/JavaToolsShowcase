@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
-        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
 
     <changeSet id="1" author="toto">
         <createTable tableName="teams">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="coachName" type="varchar(50)"/>
+            <column name="coach_name" type="varchar(50)"/>
             <column name="name" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
@@ -22,21 +20,41 @@
         <insert tableName="teams">
             <column name="id" value="1" />
             <column name="name" value="Poland" />
-            <column name="coachName" value="Adam Nawalka" />
+            <column name="coach_name" value="Adam Nawalka" />
         </insert>
 
         <insert tableName="teams">
             <column name="id" value="2" />
             <column name="name" value="Belgium" />
-            <column name="coachName" value="Roberto Martinez" />
+            <column name="coach_name" value="Roberto Martinez" />
         </insert>
 
         <insert tableName="teams">
             <column name="id" value="3" />
             <column name="name" value="France" />
-            <column name="coachName" value="Adam Nawalka" />
+            <column name="coach_name" value="Didier Deschamps" />
+        </insert>
+
+        <insert tableName="teams">
+            <column name="id" value="4" />
+            <column name="name" value="Germany" />
+            <column name="coach_name" value="Joachim Loew" />
+        </insert>
+
+        <insert tableName="teams">
+            <column name="id" value="5" />
+            <column name="name" value="England" />
+            <column name="coach_name" value="Gareth Southgate" />
+        </insert>
+
+        <insert tableName="teams">
+            <column name="id" value="6" />
+            <column name="name" value="Spain" />
+            <column name="coach_name" value="Julen Lopetegui" />
         </insert>
 
     </changeSet>
+
+    <include file="src/main/resources/db/changelog/liquibase-changelog-changes.xml"/>
 
 </databaseChangeLog>

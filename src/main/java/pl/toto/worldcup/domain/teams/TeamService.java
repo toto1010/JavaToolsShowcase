@@ -13,7 +13,7 @@ class TeamService {
     private final MapperFacade mapperFacade;
     private final TeamRepository teamRepository;
 
-    List<TeamModel> getTeams() {
-        return mapperFacade.mapAsList(teamRepository.findAll(), TeamModel.class);
+    List<TeamDto> getTeams() {
+        return mapperFacade.mapAsList(teamRepository.findAll(), TeamDto.class);
     }
 }

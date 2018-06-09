@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "team1")
+@Table(name = "teams")
 public class TeamModel {
 
     @Id
@@ -20,8 +20,8 @@ public class TeamModel {
     private Long id;
     private String name;
     private String coachName;
-/*
+
     @ManyToOne
     @JoinColumn(name = "coach_id")
-    private CoachModel coach;*/
+    private CoachModel coach;
 }
