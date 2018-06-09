@@ -13,7 +13,6 @@ public class OrikaBeanMapper extends ConfigurableMapper {
     protected void configure(MapperFactory factory) {
         super.configure(factory);
         factory.classMap(TeamModel.class, TeamDto.class)
-                .customize(new TeamCustomCoachMapper())
                 .byDefault()
                 .register();
 

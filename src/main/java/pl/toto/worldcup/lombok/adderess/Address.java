@@ -5,7 +5,6 @@ public class Address {
     private String street;
     private String number;
     private String zipcode;
-    private String city;
 
     public Address(String street, String number, String zipcode) {
         this.street = street;
@@ -39,4 +38,6 @@ public class Address {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
+
 }

@@ -55,6 +55,5 @@
 
     </changeSet>
 
-    <include file="src/main/resources/db/changelog/liquibase-changelog-changes.xml"/>
 
 </databaseChangeLog>
